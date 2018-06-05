@@ -10,22 +10,34 @@
 import kotlin.math.*
 fun main(args: Array<String>) {
 
-  val fahrenheit: Double = 99.5
+  val fahrenheit = 99.5
   println("$fahrenheit deg F = ${FToCTemp(fahrenheit)} deg C")
 
-  val celsius: Double = 37.5
+  val celsius = 37.5
   println("$celsius deg F = ${CToFTemp(celsius)} deg C")
 
   chessboard()
 
-  val angleDegrees: Double = 45.0
+  val angleDegrees = 45.0
   println("$angleDegrees degrees = ${degToRad(angleDegrees)} radians")
 
-  val x1: Double = 0.0
-  val x2: Double = 0.0
-  val y1: Double = 0.0
-  val y2: Double = 5.0
+  val x1 = 0.0
+  val x2 = 0.0
+  val y1 = 0.0
+  val y2 = 5.0
   println("Distance between ($x1, $x2) and ($y1, $y2) = ${eucDist(x1, x2, y1, y2)}")
+
+  /* TUPLES
+  Pair<a, b>
+  Triple<a, b, c>
+   */
+  var date: Triple<Int, Int , Int> = Triple(1, 1, 2018)
+  val day = date.first
+  val month = date.second
+  val year = date.third
+  val (_, m, y) = date
+  date = Triple(day,2,2018)
+
 }
 
 /* CHALLENGE 6
@@ -74,4 +86,16 @@ fun degToRad(degrees: Double): Double {
  */
 fun eucDist(x1: Double, x2: Double, y1: Double, y2: Double): Double {
   return sqrt((y1 - x1).pow(2) +  (y2 - x2).pow(2))
+}
+
+/* CHAPTER 3 CHALLENGES */
+/* CHALLENGE 1 & 2
+  1. Create a constant called coordinates and assign a pair containing two and three to it.
+  2. Extract the values 2 and 3 from coordinates into two variables called row and column.
+ */
+fun coordinate() {
+  val coordinate: Pair<Int, Int> = Pair(2, 3)
+  var row = coordinate.first
+  var column = coordinate.second
+
 }
